@@ -1,0 +1,56 @@
+extends layout
+
+block content
+
+  #page-content.container
+    .row
+      .col-md-9.col-sm-12.content-holder
+        // CONTENT
+        #menu-container
+          a.site-brand
+            .box-content
+              h3.widget-title S I G N - U P - H E R E
+            .col-md-15.col-sm-15
+              .box-content
+
+                form.task-form(method= 'POST', action= '/auth/register', onsubmit= 'return fieldValidate()')
+                  .row
+                    br
+                    br
+                    br
+                    fieldset.col-md-offset-3.col-md-9
+                      p
+                      if (status)
+                        center
+                          h6(style= "padding: 1%")= status
+                          br
+                      p
+                      p
+                        | U S E R N A M E :
+                        input#username.task(type='text', name= 'username', value= username)
+                        label(for='first_name')
+                      p
+                        | F I R S T - N A M E :
+                        input#first_name.task(type='text', name= 'firstName', value= first_name)
+                        label(for='first_name')
+                      p
+                        | L A S T - N A M E :
+                        input#last_name.task(type='text', name= 'lastName', value= last_name)
+                        label(for='last_name')
+                      p
+                        | E M A I L :
+                        input#email.task(type='email', name= 'email', value= email)
+                        label(for='email', data-error='wrong', data-success='right')
+                      p
+                        | P A S S W O R D :
+                        input#password.task(type='password', name= 'password', value= password)
+                        label(for='password')
+                      p
+                      center  
+                      input#submit.button4(name='action', type='submit', value='R E G I S T E R')
+              .box-content
+                p
+                center
+                  | A L R E A D Y - H A V E - A N - A C C O U N T? 
+                  p 
+                    a.red-text.link(href= '/auth/login') L O G - I N - H E R E

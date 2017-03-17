@@ -1,0 +1,67 @@
+doctype html
+html.no-js
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    title Team Juan
+    meta(name='description', content='')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+
+    link(rel='stylesheet', href='/stylesheets/normalize.css')
+    link(rel='stylesheet', href='/stylesheets/font-awesome.css')
+    link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src='../javascripts/vendor/modernizr-2.6.2.min.js')
+
+  body
+    .site-bg
+    .site-bg-overlay
+
+    if (!user)
+      .top-header
+        .container
+          .row
+            .col-md-6.col-sm-6.col-xs-12
+              p.phone-info
+                | T O - D O - L I S T
+            .col-md-6.col-sm-6.col-xs-12
+              .social-icons
+                ul
+                  li
+                    a(href='/') H O M E
+                  li
+                    a(href='/tasks/new') A D D - T A S K
+                  li
+                    a(href='/tasks') C H E C K - L I S T 
+    else
+      .top-header
+        .container
+          .row
+            .col-md-6.col-sm-6.col-xs-12
+              p.phone-info
+                | T O - D O - L I S T
+            .col-md-6.col-sm-6.col-xs-12
+              .social-icons
+                ul
+                  li
+                    a(href='/') H O M E
+                  li
+                    a(href='/tasks/new') A D D - T A S K
+                  li
+                    a(href='/tasks') C H E C K - L I S T
+                  li
+                    a(href='/auth/logout') L O G - O U T
+                    
+  block content
+  .site-footer
+    .container
+      .row
+        .col-md-12.text-center
+          p
+            | TEAM JUAN: Romina Bañadera & Tello Tamayo
+
+          script(src='/javascripts/vendor/jquery-1.10.2.min.js')
+          script(src='/javascripts/plugins.js')
+          script(src='/javascripts/main.js')
+          script(type='text/javascript', src= '/javascripts/validation.js')
+          script(type='text/javascript', src= '/build/bundle.js')

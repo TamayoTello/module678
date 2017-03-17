@@ -1,0 +1,46 @@
+extends layout
+
+block content
+
+  #page-content.container
+    .row
+      .col-md-9.col-sm-12.content-holder
+        // CONTENT
+        #menu-container
+          a.site-brand
+            .box-content
+              h3.widget-title L O G - I N - H E R E
+            .col-md-15.col-sm-15
+              .box-content
+
+                form.task-form(method= 'POST', action= '/auth/login')
+                  .row
+                    br
+                    br
+                    br
+                    fieldset.col-md-offset-3.col-md-9
+                      p
+                      if (loginStatus)
+                        center
+                          h6(style= "padding: 1%")= loginStatus
+                          br
+                      p
+                      p
+                        | U S E R - N A M E :
+                        input#username.task(name='username', type='text')
+                        label(for='first_name')
+                      p
+                        | P A S S W O R D :
+                        input#password.task(name='password', type='password')
+                        labe(for='password')
+                      p
+                      center  
+                      input#submit.button4(name='submit', type='submit', value='L O G - I N')
+              .box-content
+                p
+                  center
+                    | D O N ' T - H A V E - A N - A C C O U N T - Y E T? 
+                  p 
+                    center
+                      a.white-text.link(href= '/auth/register') S I G N - U P - H E R E
+                          
